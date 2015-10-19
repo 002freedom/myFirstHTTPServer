@@ -28,8 +28,8 @@ var consolere = require('console-remote-client').connect('console.re','80','002f
 //We need a function which handles requests and send response
 function handleRequest(request, response){
     response.end('Yes! It Works!! Path Hit: ' + request.url);
-    console.log("my server ip address is: " + server_ip_address) ;
-    console.log("my port number is: " + server_port) ;
+    console.re.log("my server ip address is: " + server_ip_address) ;
+    console.re.log("my port number is: " + server_port) ;
 }
 //What is a request?
 //What is a response?
