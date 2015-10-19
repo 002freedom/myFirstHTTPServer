@@ -22,6 +22,9 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 //Why do we this? 
 //What does it do?
 
+// Use a remote logging console 
+var consolere = require('console-remote-client').connect('console.re','80','002freedom_first_server'); 
+
 //We need a function which handles requests and send response
 function handleRequest(request, response){
     response.end('Yes! It Works!! Path Hit: ' + request.url);
@@ -45,7 +48,7 @@ var server = http.createServer(handleRequest);
 //Lets start our server
 server.listen(server_port, server_ip_address, function(){
     //Callback triggered when server is successfully listening. Hurray!
-    console.log("HTTP Server listening on: " + server_ip_address + ":" + server_port);
+    console.re.log("HTTP Server listening on: " + server_ip_address + ":" + server_port);
 });
 //What does the listen function do?
 //What is console.log?
